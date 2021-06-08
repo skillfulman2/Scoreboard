@@ -22,6 +22,11 @@
 		86001BE826642FCF00030A6B /* TRON.TTF in Resources */ = {isa = PBXBuildFile; fileRef = 86001BE626642FCF00030A6B /* TRON.TTF */; };
 		86001BE926642FCF00030A6B /* TRON.TTF in Resources */ = {isa = PBXBuildFile; fileRef = 86001BE626642FCF00030A6B /* TRON.TTF */; };
 		86001BF02664332700030A6B /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 86001B6D266351C900030A6B /* Info.plist */; };
+		8659E9C5266B4F1D007D5C92 /* Stargaze Stencil.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8659E9C4266B4F1D007D5C92 /* Stargaze Stencil.otf */; };
+		8659E9C7266BB733007D5C92 /* AstroSpace-0Wl3o.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8659E9C6266BB733007D5C92 /* AstroSpace-0Wl3o.otf */; };
+		86AE8BBA2666E7F100030142 /* BLEManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86AE8BB92666E7F100030142 /* BLEManager.swift */; };
+		86AE8BBF2666E89900030142 /* Bluetooth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86AE8BBE2666E89900030142 /* Bluetooth.swift */; };
+		86CA4252266A818800449478 /* AddTeam.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86CA4251266A818800449478 /* AddTeam.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +64,11 @@
 		86001B9B2663534900030A6B /* Scorecard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scorecard.swift; sourceTree = "<group>"; };
 		86001BDC26642FC000030A6B /* Tr2n.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Tr2n.ttf; sourceTree = "<group>"; };
 		86001BE626642FCF00030A6B /* TRON.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = TRON.TTF; sourceTree = "<group>"; };
+		8659E9C4266B4F1D007D5C92 /* Stargaze Stencil.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Stargaze Stencil.otf"; sourceTree = "<group>"; };
+		8659E9C6266BB733007D5C92 /* AstroSpace-0Wl3o.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AstroSpace-0Wl3o.otf"; sourceTree = "<group>"; };
+		86AE8BB92666E7F100030142 /* BLEManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLEManager.swift; sourceTree = "<group>"; };
+		86AE8BBE2666E89900030142 /* Bluetooth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bluetooth.swift; sourceTree = "<group>"; };
+		86CA4251266A818800449478 /* AddTeam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTeam.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +123,9 @@
 				86001B61266351C700030A6B /* AppDelegate.swift */,
 				86001B63266351C700030A6B /* ContentView.swift */,
 				86001B9B2663534900030A6B /* Scorecard.swift */,
+				86CA4251266A818800449478 /* AddTeam.swift */,
+				86AE8BB92666E7F100030142 /* BLEManager.swift */,
+				86AE8BBE2666E89900030142 /* Bluetooth.swift */,
 				86001B65266351C900030A6B /* Assets.xcassets */,
 				86001B6A266351C900030A6B /* Main.storyboard */,
 				86001B6D266351C900030A6B /* Info.plist */,
@@ -151,8 +164,10 @@
 		86001BBE2663D89700030A6B /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				8659E9C6266BB733007D5C92 /* AstroSpace-0Wl3o.otf */,
 				86001BE626642FCF00030A6B /* TRON.TTF */,
 				86001BDC26642FC000030A6B /* Tr2n.ttf */,
+				8659E9C4266B4F1D007D5C92 /* Stargaze Stencil.otf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -262,7 +277,9 @@
 			files = (
 				86001B6C266351C900030A6B /* Main.storyboard in Resources */,
 				86001B69266351C900030A6B /* Preview Assets.xcassets in Resources */,
+				8659E9C7266BB733007D5C92 /* AstroSpace-0Wl3o.otf in Resources */,
 				86001BF02664332700030A6B /* Info.plist in Resources */,
+				8659E9C5266B4F1D007D5C92 /* Stargaze Stencil.otf in Resources */,
 				86001BDD26642FC100030A6B /* Tr2n.ttf in Resources */,
 				86001BE726642FCF00030A6B /* TRON.TTF in Resources */,
 				86001B66266351C900030A6B /* Assets.xcassets in Resources */,
@@ -295,7 +312,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				86001B9C2663534900030A6B /* Scorecard.swift in Sources */,
+				86AE8BBF2666E89900030142 /* Bluetooth.swift in Sources */,
+				86AE8BBA2666E7F100030142 /* BLEManager.swift in Sources */,
 				86001B64266351C700030A6B /* ContentView.swift in Sources */,
+				86CA4252266A818800449478 /* AddTeam.swift in Sources */,
 				86001B62266351C700030A6B /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
