@@ -15,11 +15,11 @@ struct Scorecard: View {
     
     var body: some View {
         VStack {
-            Text("\(self.name)").font(.custom("Tr2n", size: 20.0)).bold()
+            Text("\(self.name)").font(.custom("aAstroSpace", size: 20.0)).bold()
                 .foregroundColor(Color(#colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)))
                 .padding(10)
             
-            Text("\(self.score)").font(.custom("Tr2n", size: 20.0)).bold()
+            Text("\(self.score)").font(.custom("aAstroSpace", size: 20.0)).bold()
                 .foregroundColor(Color(#colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)))
                 .padding(2)
                 .padding(.bottom)
