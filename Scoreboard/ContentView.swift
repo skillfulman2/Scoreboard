@@ -62,7 +62,7 @@ struct WindowView: View
     {
         
        
-            ScrollView (.horizontal) {
+        ScrollView (.horizontal, showsIndicators: false) {
                 HStack () {
                     if (teams.teams.count == 0) {
                         Text("No Teams added")
@@ -94,7 +94,7 @@ struct WindowView: View
                         }
                     }
                 }
-                .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, minHeight: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, idealHeight: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, maxHeight: 200, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, minHeight: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, idealHeight: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, maxHeight: 200, alignment: .top)
             }
             
         

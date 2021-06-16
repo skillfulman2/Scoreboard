@@ -83,6 +83,26 @@ struct TeamsView: View {
                         
                         VStack {
                             Button(action: {
+                                //self.teams.teams.
+                                var count = 0
+                                teams.teams.forEach({ other in
+                                    if (other.name == team.name) {
+                                        self.teams.teams[count].score -= 1
+                                        teams.teams.sort { team, team2 in
+                                            return team.score > team2.score
+                                        }
+                                    }
+                                    count += 1
+                                })
+                                
+                            }) {
+                                Text("Remove Point")//.background(RoundedRectangle(cornerRadius: 16).fill(team.color).opacity(0.6))
+                            }
+                            
+                        }
+                        
+                        VStack {
+                            Button(action: {
                                 var count = 0
                                 teams.teams.forEach({ other in
                                     if (other.name == team.name) {
