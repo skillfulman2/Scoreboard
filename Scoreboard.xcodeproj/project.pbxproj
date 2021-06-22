@@ -21,7 +21,6 @@
 		86001BE726642FCF00030A6B /* TRON.TTF in Resources */ = {isa = PBXBuildFile; fileRef = 86001BE626642FCF00030A6B /* TRON.TTF */; };
 		86001BE826642FCF00030A6B /* TRON.TTF in Resources */ = {isa = PBXBuildFile; fileRef = 86001BE626642FCF00030A6B /* TRON.TTF */; };
 		86001BE926642FCF00030A6B /* TRON.TTF in Resources */ = {isa = PBXBuildFile; fileRef = 86001BE626642FCF00030A6B /* TRON.TTF */; };
-		86001BF02664332700030A6B /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 86001B6D266351C900030A6B /* Info.plist */; };
 		8659E9C5266B4F1D007D5C92 /* Stargaze Stencil.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8659E9C4266B4F1D007D5C92 /* Stargaze Stencil.otf */; };
 		8659E9C7266BB733007D5C92 /* AstroSpace-0Wl3o.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8659E9C6266BB733007D5C92 /* AstroSpace-0Wl3o.otf */; };
 		86CA4252266A818800449478 /* AddTeam.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86CA4251266A818800449478 /* AddTeam.swift */; };
@@ -229,7 +228,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1240;
-				LastUpgradeCheck = 1240;
+				LastUpgradeCheck = 1250;
 				TargetAttributes = {
 					86001B5D266351C700030A6B = {
 						CreatedOnToolsVersion = 12.4;
@@ -272,7 +271,6 @@
 				86001B6C266351C900030A6B /* Main.storyboard in Resources */,
 				86001B69266351C900030A6B /* Preview Assets.xcassets in Resources */,
 				8659E9C7266BB733007D5C92 /* AstroSpace-0Wl3o.otf in Resources */,
-				86001BF02664332700030A6B /* Info.plist in Resources */,
 				8659E9C5266B4F1D007D5C92 /* Stargaze Stencil.otf in Resources */,
 				86001BDD26642FC100030A6B /* Tr2n.ttf in Resources */,
 				86001BE726642FCF00030A6B /* TRON.TTF in Resources */,
@@ -476,6 +474,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Scoreboard/Scoreboard.entitlements;
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"Scoreboard/Preview Content\"";
@@ -500,6 +499,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Scoreboard/Scoreboard.entitlements;
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"Scoreboard/Preview Content\"";
