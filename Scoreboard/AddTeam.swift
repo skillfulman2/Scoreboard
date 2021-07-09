@@ -22,10 +22,14 @@ struct Team: Identifiable {
     
 }
 
+class Settings: ObservableObject {
+    @Published var size = 30.0
+    @Published var opacity = 0.8
+}
+
 
 class Teams: ObservableObject {
     @Published var teams = [Team]()
-    
     
     func addTeam(team: Team) {
         teams.append(team)
@@ -83,13 +87,35 @@ struct TeamsView: View {
                         
                         VStack {
                             Button(action: {
+                                //self.teams.teams.
+                                var count = 0
+                                teams.teams.forEach({ other in
+                                    if (other.name == team.name) {
+                                        self.teams.teams[count].score -= 1
+                                        teams.teams.sort { team, team2 in
+                                            return team.score > team2.score
+                                        }
+                                    }
+                                    count += 1
+                                })
+                                
+                            }) {
+                                Text("Remove Point")
+                            }
+                            
+                        }
+                        
+                        VStack {
+                            Button(action: {
                                 var count = 0
                                 teams.teams.forEach({ other in
                                     if (other.name == team.name) {
                                         self.teams.teams.remove(at: count)
                                         teams.teams.sort { team, team2 in
                                             return team.score > team2.score
+                                            
                                         }
+                                        return
                                     }
                                     count += 1
                                 })
@@ -136,8 +162,6 @@ struct AddTeam: View {
             }
             
         }
-        
-        
         
     }
 }

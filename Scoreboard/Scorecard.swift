@@ -24,7 +24,7 @@ struct Scorecard: View {
                 .padding(2)
                 .padding(.bottom)
         }
-        .background(RoundedRectangle(cornerRadius: 16).fill(cardColor).opacity(0.6))
+        .background(RoundedRectangle(cornerRadius: 16).fill(cardColor).opacity(0.2))
     }
 }
 

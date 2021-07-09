@@ -9,6 +9,8 @@ import SwiftUI
 
 struct ContentView: View {
     @ObservedObject var teams = Teams()
+    @ObservedObject var settings = Settings()
+    
     
     var body: some View {
         
@@ -17,11 +19,59 @@ struct ContentView: View {
             TeamsView(teams: teams)
                 .padding()
             
-            Button(action: {openMyWindow(teams: teams)},
+            HStack {
+                Text("Text Size: ")
+                Button(action: {
+                    settings.size += 1
+                }) {
+                    if #available(macOS 11.0, *) {
+                        Image(systemName: "plus.circle")
+                    } else {
+                        Text("Increase Text Size")
+                    }
+                }
+                
+                Button(action: {
+                    settings.size -= 1
+                }) {
+                    if #available(macOS 11.0, *) {
+                        Image(systemName: "minus.circle")
+                    } else {
+                        Text("Decrease Text Size")
+                    }
+                }
+            }
+            
+            HStack {
+                Text("Opacity: ")
+                Button(action: {
+                    settings.opacity += 0.05
+                }) {
+                    if #available(macOS 11.0, *) {
+                        Image(systemName: "plus.circle.fill")
+                    } else {
+                        Text("Increase Opacity")
+                    }
+                }
+                
+                Button(action: {
+                    settings.opacity -= 0.05
+                }) {
+                    if #available(macOS 11.0, *) {
+                        Image(systemName: "minus.circle.fill")
+                    } else {
+                        Text("Decrease Opacity")
+                    }
+                }
+            }
+            
+            
+            
+            Button(action: {openMyWindow(teams: teams, settings: settings)},
                    label: {if #available(macOS 11.0, *) {
                     Text("Add Window")
                    } else {
-                    Text("Swag")
+                    Text("Add Window")
                    }})
                 .padding()
         }
@@ -30,7 +80,7 @@ struct ContentView: View {
     }
 }
 
-func openMyWindow(teams: Teams)
+func openMyWindow(teams: Teams, settings: Settings)
 {
     var windowRef:NSWindow
     windowRef = NSWindow(
@@ -47,7 +97,7 @@ func openMyWindow(teams: Teams)
     windowRef.styleMask.remove(.miniaturizable)
     windowRef.isOpaque = true
     windowRef.backgroundColor = NSColor(red: 0, green: 0, blue: 0, alpha: 0)
-    windowRef.contentView = NSHostingView(rootView: WindowView(teams: teams))
+    windowRef.contentView = NSHostingView(rootView: WindowView(teams: teams, settings: settings))
     
 }
 
@@ -56,13 +106,17 @@ struct WindowView: View
 {
     
     @ObservedObject var teams : Teams
+    @ObservedObject var settings: Settings
+    
+    
+    
     
     var body: some View
     
     {
         
        
-            ScrollView (.horizontal) {
+        ScrollView (.horizontal, showsIndicators: false) {
                 HStack () {
                     if (teams.teams.count == 0) {
                         Text("No Teams added")
@@ -74,16 +128,16 @@ struct WindowView: View
                                 
                                 VStack {
                                     
-                                    Text("\(team.name)").font(.custom("aAstroSpace", size: 30.0)).bold()
+                                    Text("\(team.name)").font(.custom("aAstroSpace", size: CGFloat(settings.size))).bold()
                                         .foregroundColor(Color(#colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)))
                                         .padding(10)
                                     
-                                    Text("\(team.score)").font(.custom("aAstroSpace", size: 30.0)).bold()
+                                    Text("\(team.score)").font(.custom("aAstroSpace", size: CGFloat(settings.size))).bold()
                                         .foregroundColor(Color(#colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)))
                                         .padding(2)
                                         .padding(.bottom)
                                 }
-                                .background(RoundedRectangle(cornerRadius: 16).fill(team.color).opacity(0.8))
+                                .background(RoundedRectangle(cornerRadius: 16).fill(team.color).opacity(settings.opacity))
                                 
                                 
                                 
@@ -94,11 +148,8 @@ struct WindowView: View
                         }
                     }
                 }
-                .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, minHeight: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, idealHeight: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, maxHeight: 200, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, minHeight: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, idealHeight: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, maxHeight: 200, alignment: .top)
             }
-            
-        
-        
     }
     
 }
