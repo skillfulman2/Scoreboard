@@ -10,6 +10,7 @@ import SwiftUI
 struct ContentView: View {
     @ObservedObject var teams = Teams()
     
+    
     var body: some View {
         
         VStack {
@@ -17,11 +18,59 @@ struct ContentView: View {
             TeamsView(teams: teams)
                 .padding()
             
+            HStack {
+                Text("Text Size: ")
+                Button(action: {
+                    teams.size += 1
+                }) {
+                    if #available(macOS 11.0, *) {
+                        Image(systemName: "plus.circle")
+                    } else {
+                        Text("Increase Text Size")
+                    }
+                }
+                
+                Button(action: {
+                    teams.size -= 1
+                }) {
+                    if #available(macOS 11.0, *) {
+                        Image(systemName: "minus.circle")
+                    } else {
+                        Text("Decrease Text Size")
+                    }
+                }
+            }
+            
+            HStack {
+                Text("Opacity: ")
+                Button(action: {
+                    teams.opacity += 0.05
+                }) {
+                    if #available(macOS 11.0, *) {
+                        Image(systemName: "plus.circle.fill")
+                    } else {
+                        Text("Increase Opacity")
+                    }
+                }
+                
+                Button(action: {
+                    teams.opacity -= 0.05
+                }) {
+                    if #available(macOS 11.0, *) {
+                        Image(systemName: "minus.circle.fill")
+                    } else {
+                        Text("Decrease Opacity")
+                    }
+                }
+            }
+            
+            
+            
             Button(action: {openMyWindow(teams: teams)},
                    label: {if #available(macOS 11.0, *) {
                     Text("Add Window")
                    } else {
-                    Text("Swag")
+                    Text("Add Window")
                    }})
                 .padding()
         }
@@ -57,6 +106,9 @@ struct WindowView: View
     
     @ObservedObject var teams : Teams
     
+    
+    
+    
     var body: some View
     
     {
@@ -74,16 +126,16 @@ struct WindowView: View
                                 
                                 VStack {
                                     
-                                    Text("\(team.name)").font(.custom("aAstroSpace", size: 30.0)).bold()
+                                    Text("\(team.name)").font(.custom("aAstroSpace", size: CGFloat(teams.size))).bold()
                                         .foregroundColor(Color(#colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)))
                                         .padding(10)
                                     
-                                    Text("\(team.score)").font(.custom("aAstroSpace", size: 30.0)).bold()
+                                    Text("\(team.score)").font(.custom("aAstroSpace", size: CGFloat(teams.size))).bold()
                                         .foregroundColor(Color(#colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)))
                                         .padding(2)
                                         .padding(.bottom)
                                 }
-                                .background(RoundedRectangle(cornerRadius: 16).fill(team.color).opacity(0.8))
+                                .background(RoundedRectangle(cornerRadius: 16).fill(team.color).opacity(teams.opacity))
                                 
                                 
                                 

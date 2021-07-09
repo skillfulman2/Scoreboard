@@ -25,6 +25,8 @@ struct Team: Identifiable {
 
 class Teams: ObservableObject {
     @Published var teams = [Team]()
+    @Published var size = 30.0
+    @Published var opacity = 0.8
     
     
     func addTeam(team: Team) {
@@ -96,7 +98,7 @@ struct TeamsView: View {
                                 })
                                 
                             }) {
-                                Text("Remove Point")//.background(RoundedRectangle(cornerRadius: 16).fill(team.color).opacity(0.6))
+                                Text("Remove Point")
                             }
                             
                         }
@@ -109,7 +111,9 @@ struct TeamsView: View {
                                         self.teams.teams.remove(at: count)
                                         teams.teams.sort { team, team2 in
                                             return team.score > team2.score
+                                            
                                         }
+                                        return
                                     }
                                     count += 1
                                 })
